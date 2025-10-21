@@ -69,7 +69,7 @@ export default function FormRegister() {
       <h2 className="text-4xl text-gray-600 font-bold text-center">
         Registrate
       </h2>
-      <section className="md:grid md:grid-cols-2 md:place-items-center gap-3 flex flex-col justify-center items-center w-full p-2">
+      <section className="md:grid md:grid-cols-2 md:items-start gap-5 flex flex-col justify-center items-center w-full p-2">
         <Input
           label="Nombre/s"
           name="nombre"
@@ -95,7 +95,6 @@ export default function FormRegister() {
           register={register}
           error={errors?.dni?.message}
         ></Input>
-        {errors?.dni?.message}
 
         <Select
           label="Obra Social"
@@ -117,7 +116,6 @@ export default function FormRegister() {
           register={register}
           error={errors?.celular?.message}
         ></Input>
-        {errors?.celular?.message}
 
         <Input
           label="Email"
@@ -135,7 +133,6 @@ export default function FormRegister() {
           register={register}
           error={errors?.contraseña?.message}
         ></Input>
-        {errors?.contraseña?.message}
 
         <Input
           label="Confirmar contraseña"
@@ -145,7 +142,6 @@ export default function FormRegister() {
           register={register}
           error={errors?.confirmar_contraseña?.message}
         ></Input>
-        {errors?.confirmar_contraseña?.message}
       </section>
 
       <button

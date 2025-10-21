@@ -10,8 +10,13 @@ export default function FormLogin() {
       <h2 className="text-4xl text-gray-600 font-bold text-center">
         Inicia sesión
       </h2>
-      <Input texto="Email" icono={faUser}></Input>
-      <Input texto="Password" tipo="password" icono={faLock}></Input>
+      <Input label="Email" name="email" icono={faUser}></Input>
+      <Input
+        label="Password"
+        name="password"
+        tipo="password"
+        icono={faLock}
+      ></Input>
 
       <div>
         <input

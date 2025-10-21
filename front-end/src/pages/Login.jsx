@@ -51,7 +51,7 @@ export default function Login() {
           </button>
         </div>
       </section>
-      <section className="flex justify-center items-center">
+      <section className="flex justify-end items-center w-full">
         <FormLogin></FormLogin>
       </section>
       <button>
