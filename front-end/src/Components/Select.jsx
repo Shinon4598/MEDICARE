@@ -3,14 +3,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useId } from "react";
 
-function Input({
-  texto = "default",
-  name = "",
-  icono,
-  tipo = "text",
-  children,
-}) {
-  const [valueLabel, setValueLabel] = useState(texto);
+function Select({ name = "", icono, children }) {
   const id = useId();
   const idPersonalizado = `${id}_${name
     .trim()
@@ -24,19 +17,16 @@ function Input({
       >
         {" "}
         <FontAwesomeIcon icon={icono} className="mr-2 text-gray-500" />
-        {valueLabel}
       </label>
-      <input
-        onChange={(e) => {
-          !!e.target.value ? setValueLabel("") : setValueLabel(texto);
-        }}
-        className="border border-gray-300 rounded-[15px] py-2 pl-10 shadow"
-        type={tipo}
+      <select
+        className="text-gray-500 border border-gray-300 rounded-[15px] px-7 py-3 pl-10 shadow text-start "
         name={name}
         id={idPersonalizado}
-      />
+      >
+        {children}
+      </select>
     </div>
   );
 }
 
-export default Input;
+export default Select;

@@ -9,7 +9,14 @@ body,
 * {
   box-sizing: border-box;
 }
+label {
+  user-select: none;
+}
 
+select,
+option {
+  text-align: left;
+}
 input {
   min-width: 0;
 }
