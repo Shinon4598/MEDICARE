@@ -55,12 +55,15 @@ namespace MedicareApi.Services
 
         async public Task<LoginResponseDTO> Login(LoginDTO login)
         {
-            bool IsEmail = Regex.IsMatch(login.Email, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
-            Usuario user;
+            bool IsEmail = Regex.IsMatch(login.Email, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");            Usuario user;
 
-            user = await _userServices.GetOneByEmail(login.EmailOrUsername);
-            
-            if (user == null) {
+            if(!IsEmail)
+            {
+                throw new HttpResponseError(HttpStatusCode.BadRequest, "Invalid credentials");
+            }
+            user = await _userServices.GetOneByEmail(login.Email);
+
+            if (user == null ) {
                 throw new HttpResponseError(HttpStatusCode.BadRequest, "Invalid credentials");
             }
 

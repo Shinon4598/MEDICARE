@@ -1,8 +1,8 @@
-using Jugadores.Config;
+using MedicareApi.Config;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace Jugadores.Repositories
+namespace MedicareApi.Repositories
 {
     public interface IRepository<T> where T : class {
         Task<IEnumerable<T>> GetAll(Expression<Func<T,bool>>? filter = null);
@@ -60,6 +60,6 @@ namespace Jugadores.Repositories
         }
 
         async public Task Save() => await _db.SaveChangesAsync();
-        
+
     }
 }

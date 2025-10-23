@@ -13,7 +13,7 @@ namespace MedicareApi.Controllers{
     [ApiController]
 
     public class AuthController : ControllerBase{
-        
+
         private readonly AuthServices _authServices;
 
         public AuthController(AuthServices authServices)
@@ -39,9 +39,9 @@ namespace MedicareApi.Controllers{
             catch(Exception ex)
             {
                 return StatusCode(
-                    StatusCode.Status500InternalServerError,
+                    StatusCodes.Status500InternalServerError,
                     new HttpMessage(ex.Message)
-                )
+                );
             }
         }
 
@@ -52,6 +52,20 @@ namespace MedicareApi.Controllers{
             try
             {
                 return Ok(await _authServices.AssignRoles(id, rolesIds));
+            }
+            catch (HttpResponseError ex)
+            {
+                return StatusCode(
+                    (int)ex.StatusCode,
+                    new HttpMessage(ex.Message)
+                );
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(
+                    StatusCodes.Status500InternalServerError,
+                    new HttpMessage(ex.Message)
+                );
             }
         }
     }

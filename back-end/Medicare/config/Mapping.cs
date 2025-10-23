@@ -1,6 +1,7 @@
 using AutoMapper;
 using MedicareApi.Models.Rol;
 using MedicareApi.Models.Usuario;
+using MedicareApi.Models.Usuario.Dto;
 
 namespace MedicareApi.Config
 {
@@ -12,7 +13,7 @@ namespace MedicareApi.Config
             CreateMap<Usuario, UsuarioWithRolesDTO>().ForMember(
                 dest => dest.Roles,
                 opt => opt.MapFrom(src => src.Roles.Select(r => r.Nombre).ToList())
-            )
+            );
         }
     }
 }

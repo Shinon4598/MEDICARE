@@ -1,7 +1,5 @@
 using AutoMapper;
 using MedicareApi.Enums;
-using MedicareApi.Models.Club;
-using MedicareApi.Models.Club.Dto;
 using MedicareApi.Models.Rol;
 using MedicareApi.Models.Usuario;
 using MedicareApi.Models.Usuario.Dto;
@@ -68,9 +66,9 @@ namespace MedicareApi.Services
                     "email is empty"
                 );
             }
-            
+
             usuario = await _repo.GetOne(x => x.Email == email);
-            
+
             return usuario;
         }
     }
