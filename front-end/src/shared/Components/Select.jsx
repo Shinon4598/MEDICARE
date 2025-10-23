@@ -1,12 +1,9 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useId } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useId } from 'react';
 
-function Select({ name = "", icono, children, register, error }) {
+function Select({ name = '', icono, children, register, error }) {
   const id = useId();
-  const idPersonalizado = `${id}_${name
-    .trim()
-    .toLowerCase()
-    .replace(" ", "_")}`;
+  const idPersonalizado = `${id}_${name.trim().toLowerCase().replace(' ', '_')}`;
 
   const registerProps = register ? register(name) : {};
 
@@ -17,7 +14,7 @@ function Select({ name = "", icono, children, register, error }) {
           className="absolute text-gray-500 top-1/2 -translate-y-1/2 left-[1rem]"
           htmlFor={idPersonalizado}
         >
-          {" "}
+          {' '}
           <FontAwesomeIcon icon={icono} className="mr-2 text-gray-500" />
         </label>
         <select
@@ -30,9 +27,7 @@ function Select({ name = "", icono, children, register, error }) {
         </select>
       </div>
       {error && (
-        <p className="text-red-500 text-sm mt-1 break-words max-w-full overflow-hidden">
-          {error}
-        </p>
+        <p className="text-red-500 text-sm mt-1 break-words max-w-full overflow-hidden">{error}</p>
       )}
     </div>
   );

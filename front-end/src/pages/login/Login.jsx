@@ -1,8 +1,8 @@
 import { useState } from "react";
-import FormLogin from "../Components/FormLogin";
+import FormLogin from "./components/FormLogin";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import FormRegister from "../Components/FormRegister";
+import FormRegister from "./components/FormRegister";
 
 export default function Login() {
   const [changeView, setChangeView] = useState(false);
@@ -32,12 +32,9 @@ export default function Login() {
         } ${animated && "expand"}`}
       >
         <div>
-          <h1 className="text-5xl text-white font-bold">
-            Bienvenido a Medicare!
-          </h1>
+          <h1 className="text-5xl text-white font-bold">Bienvenido a Medicare!</h1>
           <p className="text-2xl text-gray-200">
-            {changeView ? "Registrate" : "Inicia sesión"} para acceder al
-            sistema de turnos
+            {changeView ? "Registrate" : "Inicia sesión"} para acceder al sistema de turnos
           </p>
           <p className="text-2xl text-gray-200 py-2">
             {changeView ? "Ya tienes una cuenta?" : "No tienes una cuenta?"}
@@ -52,14 +49,14 @@ export default function Login() {
         </div>
       </section>
       <section className="flex justify-end items-center w-full">
-        <FormLogin></FormLogin>
+        <FormLogin />
       </section>
       <button>
         <FontAwesomeIcon
           icon={faXmark}
           size="2x"
           className="text-fuchsia-800 cursor-pointer hover:opacity-80 z-2 absolute top-[10px] right-[0px]"
-        ></FontAwesomeIcon>
+        />
       </button>
     </section>
   );
