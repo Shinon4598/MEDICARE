@@ -1,4 +1,4 @@
-namespace Jugadores.Enums
+namespace MedicareApi.Enums
 {
     static public class ROL
     {
