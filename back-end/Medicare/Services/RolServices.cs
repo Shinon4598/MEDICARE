@@ -1,4 +1,3 @@
-using MedicareApi.Models.Deporte;
 using MedicareApi.Models.Rol;
 using MedicareApi.Repositories;
 using MedicareApi.Utils;

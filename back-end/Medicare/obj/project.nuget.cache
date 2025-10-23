@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "auG5a8MYH1M=",
+  "dgSpecHash": "AwUkVLycLmU=",
   "success": true,
   "projectFilePath": "/home/shinon4598/Escritorio/projects/progIV/medicare/back-end/Medicare/MedicareApi.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "/home/shinon4598/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/home/shinon4598/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/home/shinon4598/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",
+    "/home/shinon4598/.nuget/packages/bcrypt.net-core/1.6.0/bcrypt.net-core.1.6.0.nupkg.sha512",
     "/home/shinon4598/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/8.0.10/microsoft.aspnetcore.authentication.jwtbearer.8.0.10.nupkg.sha512",
     "/home/shinon4598/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "/home/shinon4598/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",

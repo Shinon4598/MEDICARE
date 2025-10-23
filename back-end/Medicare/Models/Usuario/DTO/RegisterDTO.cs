@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace MedicareApi.Models.Usuario.DTO
+namespace MedicareApi.Models.Usuario.Dto
 {
     public class RegisterDTO
     {
