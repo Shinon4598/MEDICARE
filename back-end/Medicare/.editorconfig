@@ -1,0 +1,67 @@
+# Indica que este es el archivo raíz de configuración
+root = true
+
+# Configuración general
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Reglas para archivos C#
+[*.cs]
+indent_style = space
+indent_size = 4
+tab_width = 4
+
+# ======= Estilo general de código =======
+
+# Colocar llaves en nueva línea para clases, métodos y espacios de nombres
+csharp_new_line_before_open_brace = all
+
+# Colocar llaves en la misma línea para propiedades, lambdas y objetos
+csharp_new_line_before_open_brace_types = method, property, accessor, object, anonymous_method
+
+# Espacios después de comas
+csharp_space_after_comma = true
+
+# Sin espacios antes de comas
+csharp_space_before_comma = false
+
+# Espacios dentro de paréntesis (no)
+csharp_space_between_parentheses = false
+
+# Espacio después de palabras clave (if, for, while, etc.)
+csharp_space_after_keywords_in_control_flow_statements = true
+
+# Usar `var` solo cuando el tipo sea evidente
+csharp_style_var_for_built_in_types = false:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+csharp_style_var_elsewhere = false:suggestion
+
+# Ordenar los using alfabéticamente y quitar los no usados
+dotnet_sort_system_directives_first = true
+dotnet_separate_import_directive_groups = true
+
+# Siempre terminar con punto y coma
+csharp_prefer_braces = true:warning
+
+# ======= Formato y estilo =======
+
+# Máximo de 120 caracteres por línea
+max_line_length = 120
+
+# Requerir una línea en blanco antes de return
+csharp_new_line_before_return = true
+
+# Usar inferencia de tipo en variables locales (var) si es claro
+dotnet_style_qualification_for_field = false:suggestion
+dotnet_style_qualification_for_property = false:suggestion
+dotnet_style_qualification_for_method = false:suggestion
+
+# ======= Buenas prácticas =======
+# Quitar using no usados automáticamente
+dotnet_remove_unnecessary_usings = true
+
+# Ordenar miembros de clase automáticamente
+dotnet_sort_system_directives_first = true
