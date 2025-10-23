@@ -12,6 +12,7 @@ import {
   faPerson,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGoogle, faFacebook } from "@fortawesome/free-brands-svg-icons";
+import Button from "./Button";
 export default function FormRegister() {
   const schema = z
     .object({
@@ -23,10 +24,13 @@ export default function FormRegister() {
         .string("Debe ser una cadena de texto")
         .min(3, "Ingrese minimo 3 caracteres")
         .max(20, "El máximo de caracteres es de 20"),
-      dni: z.coerce.number("Debe ser un número").min(7, "minimo 7"),
-      celular: z.string().regex(/^\+54\s?9?\s?\d{2}\s?\d{4}\s?\d{4}$/, {
-        message: "Formato inválido. Usa el formato +54 9 11 1234 5678",
-      }),
+      dni: z.string().regex(/^\d{7,8}$/, "Debe tener entre 7 y 8 dígitos"),
+      celular: z
+        .string()
+        .trim()
+        .regex(/^\+54\s?9?\s?\d{2}\s?\d{4}\s?\d{4}$/, {
+          message: "Formato inválido. Usa el formato +54 9 11 1234 5678",
+        }),
       email: z
         .email("formato invalido")
         .nonempty("Este campo no debe estar vacío"),
@@ -40,7 +44,7 @@ export default function FormRegister() {
         .nonempty("Este campo no debe estar vacío")
         .min(8, "Minimo de 8 caracteres")
         .regex(
-          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/,
+          /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
           "Mínimo 8 caracteres, mayúscula, minúscula, número y símbolo"
         ),
       confirmar_contraseña: z
@@ -54,9 +58,10 @@ export default function FormRegister() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
-  } = useForm({ resolver: zodResolver(schema) });
+  } = useForm({
+    resolver: zodResolver(schema),
+  });
 
   const onSubmit = (data) => console.log(data);
 
@@ -112,7 +117,7 @@ export default function FormRegister() {
         <Input
           label="Numero celular"
           name="celular"
-          tipo="number"
+          tipo="string"
           icono={faPhone}
           register={register}
           error={errors?.celular?.message}
@@ -148,12 +153,7 @@ export default function FormRegister() {
         {errors?.confirmar_contraseña?.message}
       </section>
 
-      <button
-        className="rounded-[25px] bg-radial from-violet-500 from-40% to-violet-800 p-3 w-[100%] text-white font-bold hover:from-violet-600 fom-40% to hover:violet-1000 cursor-pointer"
-        type="submit"
-      >
-        Registrate
-      </button>
+      <Button texto="Registrate"></Button>
     </form>
   );
 }
